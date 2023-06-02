@@ -1,0 +1,1 @@
+# Utdanning Kodeverk Adapter
