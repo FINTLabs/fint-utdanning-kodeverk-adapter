@@ -35,3 +35,8 @@ spring:
             client-secret: ${fint.core.oauth2.client-secret}
             provider: fint-idp
             scope: fint-adapter
+  datasource:
+    url: ${database.url}
+    username: ${database.username}
+    password: ${database.password}
+    driver-class-name: oracle.jdbc.OracleDriver

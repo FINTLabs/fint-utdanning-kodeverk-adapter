@@ -34,6 +34,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
     implementation 'io.netty:netty-resolver-dns-native-macos:4.1.86.Final:osx-aarch_64'
+    implementation 'com.oracle.database.jdbc:ojdbc8:19.3.0.0'
 
     implementation 'no.fintlabs:fint-core-infra-models:1.1.1'
     implementation 'no.fintlabs:fint-core-adapter-common:0.1.2'
