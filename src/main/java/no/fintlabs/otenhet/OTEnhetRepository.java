@@ -11,9 +11,10 @@ import java.util.List;
 @Repository
 public class OTEnhetRepository implements WriteableResourceRepository<OTEnhetResource> {
 
+    private final OTEnhetService otEnhetService;
 
-    public OTEnhetRepository() {
-
+    public OTEnhetRepository(OTEnhetService otEnhetService) {
+        this.otEnhetService = otEnhetService;
     }
 
     @Override
@@ -23,7 +24,7 @@ public class OTEnhetRepository implements WriteableResourceRepository<OTEnhetRes
 
     @Override
     public List<OTEnhetResource> getResources() {
-        return null;
+        return otEnhetService.getResources();
     }
 
     @Override

@@ -11,7 +11,10 @@ import java.util.List;
 @Repository
 public class OTStatusRepository implements WriteableResourceRepository<OTStatusResource> {
 
-    public OTStatusRepository() {
+    private final OTStatusService otStatusService;
+
+    public OTStatusRepository(OTStatusService otStatusService) {
+        this.otStatusService = otStatusService;
     }
 
     @Override
@@ -21,7 +24,7 @@ public class OTStatusRepository implements WriteableResourceRepository<OTStatusR
 
     @Override
     public List<OTStatusResource> getResources() {
-        return null;
+        return otStatusService.getResources();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package no.fintlabs.otstatus;
+package no.fintlabs.otenhet;
 
 import lombok.Data;
 
@@ -9,22 +9,20 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "OTStatus")
-public class OTStatusEntity {
+@Table(name = "OTEnhet")
+public class OTEnhetEntity {
 
     @Id
-    @Column(name = "otstatus")
+    @Column(name = "otenhet")
     private String otStatus;
 
     @Column(name = "aktiv")
     private String aktiv;
 
-    @Column(name = "beskriv")
-    private String beskriv;
+    @Column(name = "fylkesnr")
+    private int fylkesnr;
 
     @Column(name = "navn")
     private String navn;
 
-    @Column(name = "type")
-    private String type;
 }
