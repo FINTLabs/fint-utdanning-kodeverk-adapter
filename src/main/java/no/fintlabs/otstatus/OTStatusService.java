@@ -15,13 +15,13 @@ public class OTStatusService {
 
     public OTStatusService(OTStatusJpaRepository otStatusJpaRepository) {
         this.otStatusJpaRepository = otStatusJpaRepository;
+
     }
 
     public List<OTStatusResource> getResources() {
-        List<OTStatusEntity> otStatusEntities = otStatusJpaRepository.findAll();
+        List<OTStatusEntity> otStatusEntities = otStatusJpaRepository.findByAktiv("J");
 
         return otStatusEntities.stream()
-                .filter(otStatusEntity -> otStatusEntity.getAktiv().equals("J"))
                 .map(this::createResource)
                 .collect(Collectors.toList());
     }

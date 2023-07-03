@@ -22,10 +22,10 @@ public class OTEnhetService {
     }
 
     public List<OTEnhetResource> getResources() {
-        List<OTEnhetEntity> otEnhetEntities = otEnhetJpaRepository.findAll();
+        List<OTEnhetEntity> otEnhetEntities = otEnhetJpaRepository.findByAktiv("J");
 
         return otEnhetEntities.stream()
-                .filter(otEnhetEntity -> otEnhetEntity.getAktiv().equals("J") && otEnhetEntity.getFylkesnr() == fylkesnr)
+                .filter(otEnhetEntity -> otEnhetEntity.getFylkesnr() == fylkesnr)
                 .map(this::createResource)
                 .collect(Collectors.toList());
     }
