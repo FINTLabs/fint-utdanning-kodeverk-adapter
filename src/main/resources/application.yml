@@ -1,8 +1,8 @@
 fint:
   adapter:
     id: https://vigoiks.no/fintlabs-no/utdanning/kodeverk
-    password: ${fint.core.oauth2.username}
-    username: ${fint.core.oauth2.password}
+    password: ${fint.core.oauth2.password}
+    username: ${fint.core.oauth2.username}
     base-url: https://beta.felleskomponent.no
     registration-id: fint
     org-id: fintlabs.no
