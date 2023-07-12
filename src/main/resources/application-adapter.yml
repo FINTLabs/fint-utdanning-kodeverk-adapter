@@ -1,0 +1,20 @@
+fint:
+  adapter:
+    id: https://vigoiks.no/fintlabs-no/utdanning/kodeverk
+    base-url: https://beta.felleskomponent.no
+    registration-id: fint
+    org-id: fintlabs.no
+    heartbeat-interval: 1
+    capabilities:
+      otstatus:
+        domain-name: utdanning
+        packageName: kodeverk
+        resource-name: otstatus
+        fullSyncIntervalInDays: 1
+        deltaSyncInterval: IMMEDIATE
+      otenhet:
+        domain-name: utdanning
+        packageName: kodeverk
+        resource-name: otenhet
+        fullSyncIntervalInDays: 1
+        deltaSyncInterval: IMMEDIATE

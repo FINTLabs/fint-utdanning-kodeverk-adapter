@@ -1,46 +1,7 @@
-fint:
-  adapter:
-    id: https://vigoiks.no/fintlabs-no/utdanning/kodeverk
-    password: ${fint.core.oauth2.password}
-    username: ${fint.core.oauth2.username}
-    base-url: https://beta.felleskomponent.no
-    registration-id: fint
-    org-id: fintlabs.no
-    heartbeat-interval: 1
-    capabilities:
-      otstatus:
-        domain-name: utdanning
-        packageName: kodeverk
-        resource-name: otstatus
-        fullSyncIntervalInDays: 1
-        deltaSyncInterval: IMMEDIATE
-      otenhet:
-        domain-name: utdanning
-        packageName: kodeverk
-        resource-name: otenhet
-        fullSyncIntervalInDays: 1
-        deltaSyncInterval: IMMEDIATE
-
 spring:
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.Oracle12cDialect
-  security:
-    oauth2:
-      client:
-        provider:
-          fint-idp:
-            token-uri: https://idp.felleskomponent.no/nidp/oauth/nam/token?resourceServer=fint-api
-        registration:
-          fint:
-            authorization-grant-type: password
-            client-id: ${fint.core.oauth2.client-id}
-            client-secret: ${fint.core.oauth2.client-secret}
-            provider: fint-idp
-            scope: fint-adapter
-  datasource:
-    url: ${database.url}
-    username: ${database.username}
-    password: ${database.password}
-    driver-class-name: oracle.jdbc.OracleDriver
+  profiles:
+    include:
+      - database
+      - oauth
+      - adapter
+
