@@ -22,6 +22,10 @@ fint:
         deltaSyncInterval: IMMEDIATE
 
 spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
   security:
     oauth2:
       client:
