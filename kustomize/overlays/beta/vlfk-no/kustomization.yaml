@@ -23,6 +23,9 @@ patches:
         path: "/spec/env/1/value"
         value: "https://beta.felleskomponent.no"
       - op: replace
+        path: "/spec/env/2/value"
+        value: "46"
+      - op: replace
         path: "/spec/onePassword/itemPath"
         value: "vaults/aks-beta-vault/items/fint-utdanning-kodeverk-adapter"
     target:

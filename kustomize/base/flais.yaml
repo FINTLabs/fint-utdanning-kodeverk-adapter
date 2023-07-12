@@ -21,6 +21,8 @@ spec:
       value: '-XX:+ExitOnOutOfMemoryError -Xmx384M'
     - name: fint.adapter.base-url
       value: 'https://beta.felleskomponent.no'
+    - name: fint.fylkesnr
+      value: '0'
   envFrom:
     - secretRef:
         name: utdanning-kodeverk-adapter
