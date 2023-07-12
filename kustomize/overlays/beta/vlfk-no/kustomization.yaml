@@ -1,16 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: fintlabs-no
+namespace: vlfk-no
 resources:
   - ../../../base
 commonLabels:
   app.kubernetes.io/name: fint-utdanning-kodeverk-adapter
-  app.kubernetes.io/instance: fint-utdanning-kodeverk-adapter_fintlabs-no
+  app.kubernetes.io/instance: fint-utdanning-kodeverk-adapter_vlfk_no
   app.kubernetes.io/version: latest
-  app.kubernetes.io/component: backend
-  app.kubernetes.io/part-of: fint-flyt
-  fintlabs.no/team: flyt
-  fintlabs.no/org-id: fintlabs.no
+  app.kubernetes.io/component: adapter
+  app.kubernetes.io/part-of: fint-core
+  fintlabs.no/team: core
+  vlfk.no/org-id: vlfk.no
 patches:
   - patch: |-
       - op: replace
@@ -18,7 +18,7 @@ patches:
         value: "fint-utdanning-kodeverk-adapter_fintlabs_no"
       - op: replace
         path: "/spec/orgId"
-        value: "fintlabs.no"
+        value: "vlfk.no"
       - op: replace
         path: "/spec/env/1/value"
         value: "https://beta.felleskomponent.no"
@@ -28,4 +28,16 @@ patches:
     target:
       kind: Application
       name: fint-utdanning-kodeverk-adapter
+
+  - patch: |-
+      - op: replace
+        path: "/metadata/labels/app.kubernetes.io~1instance"
+        value: "fint-utdanning-kodeverk-adapter_vlfk_no"
+      - op: replace
+        path: "/spec/orgId"
+        value: "vlfk.no"
+    target:
+      kind: FintAdapter
+      name: utdanning-kodeverk-adapter
+
 

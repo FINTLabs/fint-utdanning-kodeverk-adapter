@@ -1,0 +1,43 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: ude-oslo-kommune-no
+resources:
+  - ../../../base
+commonLabels:
+  app.kubernetes.io/name: fint-utdanning-kodeverk-adapter
+  app.kubernetes.io/instance: fint-utdanning-kodeverk-adapter_ude_oslo_kommune_no
+  app.kubernetes.io/version: latest
+  app.kubernetes.io/component: adapter
+  app.kubernetes.io/part-of: fint-core
+  fintlabs.no/team: core
+  ude.oslo.kommune.no/org-id: ude.oslo.kommune.no
+patches:
+  - patch: |-
+      - op: replace
+        path: "/metadata/labels/app.kubernetes.io~1instance"
+        value: "fint-utdanning-kodeverk-adapter_fintlabs_no"
+      - op: replace
+        path: "/spec/orgId"
+        value: "ude.oslo.kommune.no"
+      - op: replace
+        path: "/spec/env/1/value"
+        value: "https://beta.felleskomponent.no"
+      - op: replace
+        path: "/spec/onePassword/itemPath"
+        value: "vaults/aks-beta-vault/items/fint-utdanning-kodeverk-adapter"
+    target:
+      kind: Application
+      name: fint-utdanning-kodeverk-adapter
+
+  - patch: |-
+      - op: replace
+        path: "/metadata/labels/app.kubernetes.io~1instance"
+        value: "fint-utdanning-kodeverk-adapter_ude_oslo_kommune_no"
+      - op: replace
+        path: "/spec/orgId"
+        value: "ude.oslo.kommune.no"
+    target:
+      kind: FintAdapter
+      name: utdanning-kodeverk-adapter
+
+

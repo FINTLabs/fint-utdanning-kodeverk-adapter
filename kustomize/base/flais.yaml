@@ -21,6 +21,9 @@ spec:
       value: '-XX:+ExitOnOutOfMemoryError -Xmx384M'
     - name: fint.adapter.base-url
       value: 'https://beta.felleskomponent.no'
+  envFrom:
+    - secretRef:
+        name: utdanning-kodeverk-adapter
   onePassword:
     itemPath: "vaults/aks-beta-vault/items/item123"
   resources:
