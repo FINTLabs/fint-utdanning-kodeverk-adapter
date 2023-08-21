@@ -39,6 +39,9 @@ patches:
       - op: replace
         path: "/spec/orgId"
         value: "agderfk.no"
+      - op: replace
+        path: "/metadata/labels/fintlabs.no~1org-id"
+        value: "agderfk.no"
     target:
       kind: FintAdapter
       name: utdanning-kodeverk-adapter

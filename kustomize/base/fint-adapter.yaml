@@ -13,6 +13,6 @@ metadata:
     fintlabs.no/org-id: org-dot
 spec:
   orgId: org-dot
-  note: Sender lærling data til FINT
+  note: Sender OTStatus og OTEnhet til FINT
   components:
-    - utdanning_larling
+    - utdanning_kodeverk
