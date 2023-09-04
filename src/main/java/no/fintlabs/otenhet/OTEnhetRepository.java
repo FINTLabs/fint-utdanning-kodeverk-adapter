@@ -1,6 +1,6 @@
 package no.fintlabs.otenhet;
 
-import no.fint.model.resource.utdanning.kodeverk.OTEnhetResource;
+import no.fint.model.resource.utdanning.kodeverk.OtEnhetResource;
 import no.fintlabs.adapter.events.WriteableResourceRepository;
 import no.fintlabs.adapter.models.RequestFintEvent;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class OTEnhetRepository implements WriteableResourceRepository<OTEnhetResource> {
+public class OTEnhetRepository implements WriteableResourceRepository<OtEnhetResource> {
 
     private final OTEnhetService otEnhetService;
 
@@ -18,17 +18,17 @@ public class OTEnhetRepository implements WriteableResourceRepository<OTEnhetRes
     }
 
     @Override
-    public OTEnhetResource saveResources(OTEnhetResource resource, RequestFintEvent requestFintEvent) {
+    public OtEnhetResource saveResources(OtEnhetResource resource, RequestFintEvent requestFintEvent) {
         return null;
     }
 
     @Override
-    public List<OTEnhetResource> getResources() {
+    public List<OtEnhetResource> getResources() {
         return otEnhetService.getResources();
     }
 
     @Override
-    public List<OTEnhetResource> getUpdatedResources() {
+    public List<OtEnhetResource> getUpdatedResources() {
         return new ArrayList<>();
     }
 }

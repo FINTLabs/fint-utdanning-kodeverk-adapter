@@ -2,7 +2,7 @@ package no.fintlabs.otstatus;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.Link;
-import no.fint.model.resource.utdanning.kodeverk.OTStatusResource;
+import no.fint.model.resource.utdanning.kodeverk.OtStatusResource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class OTStatusService {
 
     }
 
-    public List<OTStatusResource> getResources() {
+    public List<OtStatusResource> getResources() {
         List<OTStatusEntity> otStatusEntities = otStatusJpaRepository.findByAktiv("J");
 
         return otStatusEntities.stream()
@@ -26,8 +26,8 @@ public class OTStatusService {
                 .collect(Collectors.toList());
     }
 
-    private OTStatusResource createResource(OTStatusEntity otStatusEntity) {
-        OTStatusResource otStatusResource = new OTStatusResource();
+    private OtStatusResource createResource(OTStatusEntity otStatusEntity) {
+        OtStatusResource otStatusResource = new OtStatusResource();
 
         otStatusResource.setBeskrivelse(otStatusEntity.getBeskriv());
         otStatusResource.setType(otStatusEntity.getType());
@@ -38,7 +38,7 @@ public class OTStatusService {
         identifikator.setIdentifikatorverdi(otStatusEntity.getOtStatus());
         otStatusResource.setSystemId(identifikator);
 
-        otStatusResource.addSelf(Link.with(OTStatusResource.class, "systemid", otStatusEntity.getOtStatus()));
+        otStatusResource.addSelf(Link.with(OtStatusResource.class, "systemid", otStatusEntity.getOtStatus()));
 
         return otStatusResource;
     }

@@ -2,7 +2,7 @@ package no.fintlabs.otenhet;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.Link;
-import no.fint.model.resource.utdanning.kodeverk.OTEnhetResource;
+import no.fint.model.resource.utdanning.kodeverk.OtEnhetResource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class OTEnhetService {
         this.otEnhetJpaRepository = otEnhetJpaRepository;
     }
 
-    public List<OTEnhetResource> getResources() {
+    public List<OtEnhetResource> getResources() {
         List<OTEnhetEntity> otEnhetEntities = otEnhetJpaRepository.findByAktiv("J");
 
         return otEnhetEntities.stream()
@@ -30,8 +30,8 @@ public class OTEnhetService {
                 .collect(Collectors.toList());
     }
 
-    private OTEnhetResource createResource(OTEnhetEntity otEnhetEntity) {
-        OTEnhetResource otEnhetResource = new OTEnhetResource();
+    private OtEnhetResource createResource(OTEnhetEntity otEnhetEntity) {
+        OtEnhetResource otEnhetResource = new OtEnhetResource();
         otEnhetResource.setKode(otEnhetEntity.getOtStatus());
         otEnhetResource.setNavn(otEnhetEntity.getNavn());
 
@@ -39,7 +39,7 @@ public class OTEnhetService {
         identifikator.setIdentifikatorverdi(otEnhetEntity.getOtStatus());
         otEnhetResource.setSystemId(identifikator);
 
-        otEnhetResource.addSelf(Link.with(OTEnhetResource.class, "systemid", otEnhetEntity.getOtStatus()));
+        otEnhetResource.addSelf(Link.with(OtEnhetResource.class, "systemid", otEnhetEntity.getOtStatus()));
 
         return otEnhetResource;
     }

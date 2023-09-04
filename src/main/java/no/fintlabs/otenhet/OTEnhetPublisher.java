@@ -1,7 +1,7 @@
 package no.fintlabs.otenhet;
 
 import lombok.extern.slf4j.Slf4j;
-import no.fint.model.resource.utdanning.kodeverk.OTEnhetResource;
+import no.fint.model.resource.utdanning.kodeverk.OtEnhetResource;
 import no.fintlabs.adapter.config.AdapterProperties;
 import no.fintlabs.adapter.datasync.ResourcePublisher;
 import no.fintlabs.adapter.datasync.ResourceRepository;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class OTEnhetPublisher extends ResourcePublisher<OTEnhetResource, ResourceRepository<OTEnhetResource>> {
+public class OTEnhetPublisher extends ResourcePublisher<OtEnhetResource, ResourceRepository<OtEnhetResource>> {
 
     public OTEnhetPublisher(OTEnhetRepository repository, AdapterProperties adapterProperties) {
         super(repository, adapterProperties);
