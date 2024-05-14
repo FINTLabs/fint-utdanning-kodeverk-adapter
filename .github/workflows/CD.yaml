@@ -60,12 +60,14 @@ jobs:
 #          - innlandetfylke-no
 #          - agderfk-no
 #          - vlfk-no
-#          - mrfylke-no
 #          - vtfk-no
-          - rogfk-no
-          - trondelagfylke-no
+          - vestfoldfylke-no
+          - telemarkfylke-no
+          - mrfylke-no
           - nfk-no
+          - rogfk-no
           - tffk-no
+          - trondelagfylke-no
         cluster:
 #          - aks-alpha-fint-2021-11-18
           - aks-beta-fint-2021-11-23
