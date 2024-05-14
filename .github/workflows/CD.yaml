@@ -62,6 +62,7 @@ jobs:
 #          - vlfk-no
 #          - mrfylke-no
 #          - vtfk-no
+          - rogfk-no
           - trondelagfylke-no
           - nfk-no
           - tffk-no
