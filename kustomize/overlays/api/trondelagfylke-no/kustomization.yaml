@@ -21,13 +21,13 @@ patches:
         value: "trondelagfylke.no"
       - op: replace
         path: "/spec/env/1/value"
-        value: "https://beta.felleskomponent.no"
+        value: "https://api.felleskomponent.no"
       - op: replace
         path: "/spec/env/2/value"
         value: "50"
       - op: replace
         path: "/spec/onePassword/itemPath"
-        value: "vaults/aks-beta-vault/items/fint-utdanning-kodeverk-adapter"
+        value: "vaults/aks-api-vault/items/fint-utdanning-kodeverk-adapter"
     target:
       kind: Application
       name: fint-utdanning-kodeverk-adapter
