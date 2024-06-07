@@ -58,7 +58,7 @@ jobs:
 #          - visma-com
 #          - ude-oslo-kommune-no
 #          - innlandetfylke-no
-#          - agderfk-no
+          - agderfk-no
 #          - vlfk-no
 #          - vtfk-no
           - vestfoldfylke-no
@@ -76,6 +76,8 @@ jobs:
         include:
           - cluster: aks-api-fint-2022-02-08
             org: trondelagfylke-no
+          - cluster: aks-api-fint-2022-02-08
+            org: agderfk-no
 
     steps:
       - name: Checkout repository
