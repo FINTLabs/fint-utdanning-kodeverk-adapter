@@ -23,6 +23,8 @@ spec:
       value: 'https://beta.felleskomponent.no'
     - name: fint.fylkesnr
       value: '0'
+    - name: fint.adapter.id
+      value: https://vigoiks.no/fintlabs-no/utdanning/kodeverk
   envFrom:
     - secretRef:
         name: utdanning-kodeverk-adapter

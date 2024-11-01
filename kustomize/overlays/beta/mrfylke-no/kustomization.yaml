@@ -26,6 +26,9 @@ patches:
         path: "/spec/env/2/value"
         value: "15"
       - op: replace
+        path: "/spec/env/3/value"
+        value: "https://vigoiks.no/mrfylke-no/utdanning/kodeverk"
+      - op: replace
         path: "/spec/onePassword/itemPath"
         value: "vaults/aks-beta-vault/items/fint-utdanning-kodeverk-adapter"
     target:
