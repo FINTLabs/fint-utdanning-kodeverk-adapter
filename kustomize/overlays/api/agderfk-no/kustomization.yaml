@@ -28,9 +28,6 @@ patches:
       - op: replace
         path: "/spec/env/2/value"
         value: "42"
-      - op: replace
-        path: "/spec/onePassword/itemPath"
-        value: "vaults/aks-api-vault/items/fint-utdanning-kodeverk-adapter"
     target:
       kind: Application
       name: fint-utdanning-kodeverk-adapter
