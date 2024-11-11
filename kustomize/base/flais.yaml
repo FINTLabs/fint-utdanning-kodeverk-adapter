@@ -28,6 +28,8 @@ spec:
   envFrom:
     - secretRef:
         name: utdanning-kodeverk-adapter
+  onePassword:
+    itemPath: "vaults/aks-beta-vault/items/item123"
   resources:
     limits:
       memory: "512Mi"
