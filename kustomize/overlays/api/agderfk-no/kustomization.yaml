@@ -10,7 +10,7 @@ commonLabels:
   app.kubernetes.io/component: adapter
   app.kubernetes.io/part-of: fint-core
   fintlabs.no/team: core
-  agderfk.no/org-id: agderfk.no
+  fintlabs.no/org-id: agderfk.no
 patches:
   - patch: |-
       - op: replace

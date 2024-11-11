@@ -10,7 +10,7 @@ commonLabels:
   app.kubernetes.io/component: adapter
   app.kubernetes.io/part-of: fint-core
   fintlabs.no/team: core
-  trondelagfylke.no/org-id: trondelagfylke.no
+  fintlabs.no/org-id: trondelagfylke.no
 patches:
   - patch: |-
       - op: replace

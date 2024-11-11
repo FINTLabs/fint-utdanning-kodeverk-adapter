@@ -10,7 +10,7 @@ commonLabels:
   app.kubernetes.io/component: adapter
   app.kubernetes.io/part-of: fint-core
   fintlabs.no/team: core
-  nfk.no/org-id: nfk.no
+  fintlabs.no/org-id: nfk.no
 patches:
   - patch: |-
       - op: replace
