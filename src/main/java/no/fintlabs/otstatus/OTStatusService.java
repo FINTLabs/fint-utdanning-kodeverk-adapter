@@ -1,8 +1,8 @@
 package no.fintlabs.otstatus;
 
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.resource.Link;
-import no.fint.model.resource.utdanning.kodeverk.OtStatusResource;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.novari.fint.model.resource.Link;
+import no.novari.fint.model.resource.utdanning.kodeverk.OtStatusResource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

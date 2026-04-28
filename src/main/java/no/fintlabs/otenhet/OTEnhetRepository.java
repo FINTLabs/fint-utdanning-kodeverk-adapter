@@ -1,8 +1,8 @@
 package no.fintlabs.otenhet;
 
-import no.fint.model.resource.utdanning.kodeverk.OtEnhetResource;
+import no.novari.fint.model.resource.utdanning.kodeverk.OtEnhetResource;
 import no.fintlabs.adapter.events.WriteableResourceRepository;
-import no.fintlabs.adapter.models.RequestFintEvent;
+import no.fintlabs.adapter.models.event.RequestFintEvent;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
