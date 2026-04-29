@@ -6,7 +6,13 @@ plugins {
 }
 
 group = 'no.fintlabs'
-sourceCompatibility = 17
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
 
 repositories {
     mavenCentral()
