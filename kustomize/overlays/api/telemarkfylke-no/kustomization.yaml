@@ -1,0 +1,52 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: telemarkfylke-no
+resources:
+  - ../../../base
+commonLabels:
+  app.kubernetes.io/name: fint-utdanning-kodeverk-adapter
+  app.kubernetes.io/instance: fint-utdanning-kodeverk-adapter_telemarkfylke_no
+  app.kubernetes.io/version: latest
+  app.kubernetes.io/component: adapter
+  app.kubernetes.io/part-of: fint-core
+  fintlabs.no/team: core
+  fintlabs.no/org-id: telemarkfylke.no
+patches:
+  - patch: |-
+      - op: replace
+        path: "/metadata/labels/app.kubernetes.io~1instance"
+        value: "fint-utdanning-kodeverk-adapter_telemarkfylke_no"
+      - op: replace
+        path: "/spec/orgId"
+        value: "telemarkfylke.no"
+      - op: replace
+        path: "/spec/env/1/value"
+        value: "https://api.felleskomponent.no"
+      - op: replace
+        path: "/spec/env/2/value"
+        value: "40"
+      - op: replace
+        path: "/spec/env/3/value"
+        value: "https://vigoiks.no/telemarkfylke-no/utdanning/kodeverk"
+      - op: replace
+        path: "/spec/onePassword/itemPath"
+        value: "vaults/aks-api-vault/items/fint-utdanning-kodeverk-adapter"
+    target:
+      kind: Application
+      name: fint-utdanning-kodeverk-adapter
+
+  - patch: |-
+      - op: replace
+        path: "/metadata/labels/app.kubernetes.io~1instance"
+        value: "fint-utdanning-kodeverk-adapter_telemarkfylke_no"
+      - op: replace
+        path: "/spec/orgId"
+        value: "telemarkfylke.no"
+      - op: replace
+        path: "/metadata/labels/fintlabs.no~1org-id"
+        value: "telemarkfylke.no"
+    target:
+      kind: FintAdapter
+      name: utdanning-kodeverk-adapter
+
+
