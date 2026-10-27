@@ -59,7 +59,7 @@ jobs:
           cluster="${{ inputs.cluster }}"
 
           if [[ "$cluster" == "aks-api-fint-2022-02-08" ]]; then
-            targets='["rogfk-no", "agderfk-no", "trondelagfylke-no"]'
+            targets='["agderfk-no", "mrfylke-no", "nfk-no", "rogfk-no", "telemarkfylke-no", "trondelagfylke-no", "vestfoldfylke-no"]'
           elif [[ "$cluster" == "aks-beta-fint-2021-11-23" ]]; then
             targets='["agderfk-no", "mrfylke-no", "nfk-no", "rogfk-no", "telemarkfylke-no", "trondelagfylke-no", "vestfoldfylke-no"]'
           elif [[ "$cluster" == "aks-alpha-fint-2021-11-18" ]]; then
