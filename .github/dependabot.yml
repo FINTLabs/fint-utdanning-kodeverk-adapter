@@ -63,6 +63,9 @@ updates:
     labels:
       - "dependencies"
       - "docker"
+    ignore:
+      # test.yaml has the placeholder tag sha-0000000. Dependabot must not update it.
+      - dependency-name: "fintlabs/fint-utdanning-kodeverk-adapter"
     commit-message:
       prefix: "deps"
       include: "scope"
